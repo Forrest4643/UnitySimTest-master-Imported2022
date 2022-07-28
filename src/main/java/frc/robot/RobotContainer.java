@@ -97,8 +97,8 @@ public class RobotContainer {
 
       controller = new Joystick(Constants.joystickPort);
 
-      compressor.setClosedLoopControl(true);  
-      compressor.setClosedLoopControl(false);      
+      // compressor.setClosedLoopControl(true);  
+      // compressor.setClosedLoopControl(false);      
 
 
       //--------------------------------------------

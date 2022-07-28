@@ -93,8 +93,8 @@ public class DriveSubsystem extends SubsystemBase {
 
         talon.set(speed) ;
         double voltage = talon.getMotorOutputVoltage() ;
-        int position = talon.getSelectedSensorPosition() ;
-        int velocity = talon.getSelectedSensorVelocity() ;
+        int position = (int) talon.getSelectedSensorPosition() ;
+        int velocity = (int) talon.getSelectedSensorVelocity() ;
         double supplyCurrent = talon.getSupplyCurrent() ;
         if ( position != 0.0) {
           // System.out.format("talon velocity is %5d, position is %5d, voltage is %5.2f, current is %5.2f%n", velocity,

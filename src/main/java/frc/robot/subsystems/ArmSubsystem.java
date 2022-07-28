@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 
 
@@ -26,7 +27,7 @@ public class ArmSubsystem extends SubsystemBase {
    */
   public ArmSubsystem() {
 
-    theSolenoid = new DoubleSolenoid(Constants.armExtendSolenoidPort, Constants.armRetractSolenoidPort ) ;
+    theSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.armExtendSolenoidPort, Constants.armRetractSolenoidPort ) ;
     // do we need to add a requirement here?
   }
 
