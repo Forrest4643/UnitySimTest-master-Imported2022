@@ -9,15 +9,15 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotBase;
 
-import com.ctre.phoenix.motion.*;
-import com.ctre.phoenix.motorcontrol.*;
-import com.ctre.phoenix.motorcontrol.can.*;
 
 import frc.robot.PhysicsSim;
 
@@ -31,8 +31,8 @@ public class DriveSubsystem extends SubsystemBase {
     private Spark right1; // = new VictorSP(RobotMap.PWM.BACK_LEFT_MOTOR_PORT);
     private Spark right2; // = new VictorSP(RobotMap.PWM.BACK_RIGHT_MOTOR_PORT);
 
-    private final SpeedControllerGroup leftMotors ;
-    private final SpeedControllerGroup rightMotors ;
+    private final MotorControllerGroup leftMotors ;
+    private final MotorControllerGroup rightMotors ;
 
     private final DifferentialDrive differentialDrive ;
 
@@ -59,8 +59,8 @@ public class DriveSubsystem extends SubsystemBase {
         right2 = new Spark(5);
         right2.setInverted(true);
 
-        leftMotors = new SpeedControllerGroup( left1, left2 ) ;
-        rightMotors = new SpeedControllerGroup( right1, right2 ) ;
+        leftMotors = new MotorControllerGroup( left1, left2 ) ;
+        rightMotors = new MotorControllerGroup( right1, right2 ) ;
 
         differentialDrive = new DifferentialDrive(leftMotors, rightMotors);
 

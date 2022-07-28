@@ -22,7 +22,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_CallbackHelper;
 
 import edu.wpi.first.wpilibj.RobotController;
-import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.util.sendable.SendableRegistry;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.util.sendable.Sendable;
@@ -45,7 +45,7 @@ import java.util.ArrayList;
 /**
  * CTRE Talon SRX Motor Controller when used on CAN Bus.
  */
-public class WPI_TalonSRX extends TalonSRX implements SpeedController, Sendable {
+public class WPI_TalonSRX extends TalonSRX implements MotorController, Sendable {
 
     private String _description;
     private double _speed;
@@ -156,7 +156,6 @@ public class WPI_TalonSRX extends TalonSRX implements SpeedController, Sendable 
             // int err = 0;
 
             this.m_simPercOut.set(this.getMotorOutputPercent());
-
             // the below lines are commented out because they were overwriting values
             // received through WebSockets. This should have
             // no impact on values set by a PhysicsSim class as used in the CTRE examples
